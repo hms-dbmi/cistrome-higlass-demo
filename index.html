@@ -2,21 +2,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HiGlass</title>
+  <title>Cistrome / HiGlass</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/higlass@1.0.0-alpha.11/dist/styles/hglib.css" type="text/css">
+
   <style type="text/css">
     .canvasjs-chart-credit {
       display: none;
     }
 
     .content {
-      width: 600px;
+      width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
 
+    h4 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
   </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/higlass@1.0.0-alpha.11/dist/styles/hglib.css" type="text/css">
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
@@ -28,7 +39,52 @@
   <div class='content'>
     <h2>Viewing Cistrome data using HiGlass</h2>
 
-    <h4>An example of an detail / overview arrangement</h4>
+    <p>
+    The cistrome database contains a set of genome-wide measures. These are
+    typically displayed in a genome browser using individual "tracks". The
+    current implementation allows users to select files in the database and
+    then go to an external viewer like UCSC to view them.
+    </p>
+
+    <p>
+    Using HiGlass, individual files can be directly displayed within the page
+    that will host them. The example below shows four bigWig files from the cistrome
+    database. Each file is displayed as a separate "track".
+    </p>
+
+    <div style="margin: auto">
+      <div style="height: 300px; width: 800px; border: 1px solid grey;"
+           id="bigwig">
+      </div>
+    </div>
+
+    <p>
+    If we try to display too many individual bigWig files, however, the performance
+    will suffer due to the many files that need to be opened and read.
+    </p>
+
+    <p>
+
+    A better solution is to consolidate the data into a single "multivec" file
+    that can be queried once to obtain values across hundreds of datasets. The
+    example below contains a heatmap made up of 256 individual samples. It also
+    contains a track showing sequence conservation as a well as 
+    <a href="http://epilogos.altiusinstitute.org">epigenetic states</a>
+
+    </p>
+
+      <div style="margin: auto">
+        <div style="height: 500px; width: 800px; border: 1px solid grey;"
+             id="multivec">
+        </div>
+      </div>
+
+    <p>
+
+    By incorporating HiGlass, Cistrome can take advantage of more advanced
+    HiGlass features such as detail / overview views.
+
+    </p>
 
     <p>
       The view on the left is a "detail" view showing data a high zoom level
@@ -36,13 +92,12 @@
       an "overview" at a lower zoom level indicating the context for the detail view.
     </p>
 
-  <div style=""></div>
   <div style="margin: auto">
-    <div style="height: 640px; width: 600px; border: 1px solid grey;"
+    <div style="height: 640px; width: 800px; border: 1px solid grey;"
          id="two-views">
     </div>
   </div>
-  And some other text
+
   </div>
 </body>
 
@@ -51,6 +106,18 @@
 <script src="https://unpkg.com/higlass@1.0.0-alpha.11/dist/scripts/hglib.js"></script>
 
 <script>
+
+  window.hglib.createHgComponent(
+    document.getElementById('bigwig'),
+    "http://higlass.io/api/v1/viewconfs/?d=E1a9LFkFRoOJaLp4JKMg7A",
+    { bounded: true}
+  );
+
+  window.hglib.createHgComponent(
+    document.getElementById('multivec'),
+    "http://higlass.io/api/v1/viewconfs/?d=Kp6qt1jaQFqTBeIqN4grpg",
+    { bounded: true}
+  );
 
   window.hglib.createHgComponent(
     document.getElementById('two-views'),
