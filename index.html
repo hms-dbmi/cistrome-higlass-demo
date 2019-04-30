@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cistrome / HiGlass</title>
-  <link rel="stylesheet" href="https://unpkg.com/higlass@1.5.5/dist/hglib.css" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/higlass@1.5.6/dist/hglib.css" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
 
   <style type="text/css">
@@ -100,25 +100,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.1/pixi.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.32.1/react-bootstrap.min.js"></script>
 
-<script src="https://unpkg.com/higlass-multivec@0.1.10/dist/higlass-multivec.js"></script>
+<script src="https://unpkg.com/higlass-multivec@0.2.0/dist/higlass-multivec.js"></script>
 <script src="https://unpkg.com/higlass-time-interval-track@0.1.8/dist/higlass-time-interval-track.js"></script>
 <script src="https://unpkg.com/higlass@1.5.5/dist/hglib.js"></script>
 
 <script>
 
-  window.hglib.createHgComponent(
+  window.hglib.viewer(
     document.getElementById('bigwig'),
     "https://higlass.io/api/v1/viewconfs/?d=E1a9LFkFRoOJaLp4JKMg7A",
     { bounded: true}
   );
 
-  window.hglib.createHgComponent(
+  window.hglib.viewer(
     document.getElementById('multivec'),
     "https://higlass.io/api/v1/viewconfs/?d=Kp6qt1jaQFqTBeIqN4grpg",
     { bounded: true}
   );
 
-  window.hglib.createHgComponent(
+  window.hglib.viewer(
     document.getElementById('two-views'),
     "https://higlass.io/api/v1/viewconfs/?d=IYecQvy-ToO9b2t0mkzupw",
     { bounded: true}
