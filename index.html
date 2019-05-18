@@ -106,21 +106,478 @@
 
 <script>
 
+  const viewconf1 = {"editable": true, "zoomFixed": false, "trackSourceServers": ["https://higlass.io/api/v1"], "exportViewUrl": "/api/v1/viewconfs", "views": [{"initialXDomain": [1075633483.7101052, 1110008410.6802597], "initialYDomain": [-54179406.77576908, -42092610.86074361], "tracks": {"top": [{"type": "horizontal-chromosome-labels", "uid": "X3S-fHGDRJSA4y0ovuaIzw", "tilesetUid": "ZpZ8c5JJRUS1J7ZkofcUrg", "server": "https://resgen.io/api/v1", "options": {"showMousePosition": false, "mousePositionColor": "#999999"}, "name": "Chromosome Axis", "width": 434, "height": 30, "position": "top"}, {"type": "horizontal-gene-annotations", "uid": "L6oR30kIQDiraJRMQN-eIQ", "tilesetUid": "M9A9klpwTci5Vf4bHZ864g", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "hidden", "plusStrandColor": "blue", "minusStrandColor": "red", "trackBorderWidth": 0, "trackBorderColor": "black", "showMousePosition": false, "name": "gene-annotations-hg38_3d2Hebg.db", "mousePositionColor": "#999999"}, "name": "Gene Annotations (hg38)", "width": 20, "height": 55, "position": "top"}, {"type": "horizontal-bar", "uid": "F7vzKMmgSdqI0ogZJGVjnQ", "tilesetUid": "IcyQRRIHQn-2LsLc2PYYHg", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "topLeft", "axisPositionHorizontal": "right", "barFillColor": "darkgreen", "valueScaling": "linear", "trackBorderWidth": 0, "trackBorderColor": "black", "labelTextOpacity": 0.4, "barOpacity": 1, "name": "http://dc2.cistrome.org/data5/browser/2110_treat.bw"}, "width": 665, "height": 35, "position": "top", "name": "https://dc2.cistrome.org/data5/browser/2110_treat.bw"}, {"type": "horizontal-bar", "uid": "CitYb1TpTq2A0rsLUM1kbA", "tilesetUid": "SylV6LOTQeaYjbDUzizUvA", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "topLeft", "axisPositionHorizontal": "right", "barFillColor": "darkgreen", "valueScaling": "linear", "trackBorderWidth": 0, "trackBorderColor": "black", "labelTextOpacity": 0.4, "barOpacity": 1, "name": "https://dc2.cistrome.org/data5/browser/57420_treat.bw"}, "width": 665, "height": 38, "position": "top", "name": "https://dc2.cistrome.org/data5/browser/57420_treat.bw"}, {"type": "horizontal-bar", "uid": "RFl1FDcoTWmfFE8deXehTQ", "tilesetUid": "V-xNGvYsQKSgZYE7hNlt2g", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "topLeft", "axisPositionHorizontal": "right", "barFillColor": "darkgreen", "valueScaling": "linear", "trackBorderWidth": 0, "trackBorderColor": "black", "labelTextOpacity": 0.4, "barOpacity": 1, "name": "https://dc2.cistrome.org/data5/browser/62671_treat.bw"}, "width": 665, "height": 36, "position": "top", "name": "https://dc2.cistrome.org/data5/browser/62671_treat.bw"}, {"type": "horizontal-bar", "uid": "Gs7-lY4xSWy3ad24IXu8cQ", "tilesetUid": "GdCIhRK_SSiE2WK3j2yx8w", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "topLeft", "axisPositionHorizontal": "right", "barFillColor": "darkgreen", "valueScaling": "linear", "trackBorderWidth": 0, "trackBorderColor": "black", "labelTextOpacity": 0.4, "barOpacity": 1, "name": "https://dc2.cistrome.org/data5/browser/63451_treat.bw"}, "width": 665, "height": 39, "position": "top", "name": "https://dc2.cistrome.org/data5/browser/63451_treat.bw"}], "left": [], "center": [], "bottom": [], "right": [], "whole": [], "gallery": []}, "layout": {"w": 12, "h": 6, "x": 0, "y": 0, "i": "EbnAjrNtRM64uCuo6RPgiQ", "moved": false, "static": false}, "uid": "EbnAjrNtRM64uCuo6RPgiQ"}], "zoomLocks": {"locksByViewUid": {}, "locksDict": {}}, "locationLocks": {"locksByViewUid": {}, "locksDict": {}}, "valueScaleLocks": {"locksByViewUid": {}, "locksDict": {}}}
+
+  const viewconf2 = {"editable": true, "zoomFixed": false, "trackSourceServers": ["https://higlass.io/api/v1"], "exportViewUrl": "/api/v1/viewconfs", "views": [{"initialXDomain": [226503127.51015902, 226823875.12247148], "initialYDomain": [2671095956.160982, 2671164406.5485015], "tracks": {"top": [{"type": "horizontal-chromosome-labels", "uid": "GzHGPlijS2eASBqslzVcxA", "tilesetUid": "ZpZ8c5JJRUS1J7ZkofcUrg", "server": "https://resgen.io/api/v1", "options": {"showMousePosition": false, "mousePositionColor": "#999999"}, "name": "Chromosome Axis", "width": 1027, "height": 30, "position": "top"}, {"type": "horizontal-gene-annotations", "uid": "R6ZZ5LnEQ4ODCWZoE38maw", "tilesetUid": "M9A9klpwTci5Vf4bHZ864g", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "hidden", "plusStrandColor": "blue", "minusStrandColor": "red", "trackBorderWidth": 0, "trackBorderColor": "black", "showMousePosition": false, "name": "gene-annotations-hg38_3d2Hebg.db", "mousePositionColor": "#999999"}, "name": "gene-annotations-hg38_3d2Hebg.db", "width": 568, "height": 70, "position": "top"}, {"type": "horizontal-bar", "uid": "bmcNxj_MSEar_3nYVMnPnQ", "tilesetUid": "a-iBpdh3Q_uO2FLCWKpOOw", "server": "https://resgen.io/api/v1", "options": {"labelColor": "black", "labelPosition": "topLeft", "axisPositionHorizontal": "right", "barFillColor": "darkgreen", "valueScaling": "linear", "trackBorderWidth": 0, "trackBorderColor": "black", "labelTextOpacity": 0.4, "barOpacity": 1, "name": "conservation (hg38.phastCons100way.bw)"}, "width": 568, "height": 42, "position": "top", "name": "conservation (hg38.phastCons100way.bw)"}, {"type": "horizontal-stacked-bar", "uid": "dEHMyN28RFSG1f-cPS6V2w", "tilesetUid": "HMSJyvLCSgGmrDJctdIz3w", "server": "https://resgen.io/api/v1", "options": {"labelPosition": "topLeft", "labelColor": "black", "labelTextOpacity": 0.4, "valueScaling": "exponential", "trackBorderWidth": 0, "trackBorderColor": "black", "backgroundColor": "white", "barBorder": false, "scaledHeight": false, "sortLargestOnTop": true, "colorScale": ["#FF0000", "#FF4500", "#32CD32", "#008000", "#006400", "#C2E105", "#FFFF00", "#66CDAA", "#8A91D0", "#CD5C5C", "#E9967A", "#BDB76B", "#808080", "#C0C0C0", "#FFFFFF"], "name": "all.KL.bed.hg38.multires.mv5"}, "width": 568, "height": 63, "position": "top", "name": "all.KL.bed.hg38.multires.mv5"}, {"type": "horizontal-multivec", "uid": "YafcbvKDQvWoWRT1WrygPA", "tilesetUid": "UvVPeLHuRDiYA3qwFlm7xQ", "server": "https://resgen.io/api/v1", "options": {"labelPosition": "hidden", "labelColor": "black", "labelTextOpacity": 0.4, "valueScaling": "linear", "trackBorderWidth": 0, "trackBorderColor": "black", "heatmapValueScaling": "log", "name": "my_file_genome_wide.multires.mv5"}, "width": 1059, "height": 213, "position": "top", "name": "my_file_genome_wide.multires.mv5"}], "left": [], "center": [], "bottom": [], "right": [], "whole": [], "gallery": []}, "layout": {"w": 12, "h": 4, "x": 0, "y": 0, "i": "UiHlCoxRQ-aITBDi5j8b_w", "moved": false, "static": false}, "uid": "UiHlCoxRQ-aITBDi5j8b_w"}], "zoomLocks": {"locksByViewUid": {}, "locksDict": {}}, "locationLocks": {"locksByViewUid": {}, "locksDict": {}}, "valueScaleLocks": {"locksByViewUid": {}, "locksDict": {}}}
+
+  const viewconf3 = {
+  "editable": true,
+  "zoomFixed": false,
+  "trackSourceServers": [
+    "https://higlass.io/api/v1"
+  ],
+  "exportViewUrl": "https://higlass.io/api/v1/viewconfs",
+  "views": [
+    {
+      "initialXDomain": [
+        226439186.44533417,
+        226811795.61897683
+      ],
+      "initialYDomain": [
+        2671172028.9675937,
+        2671185976.9045753
+      ],
+      "tracks": {
+        "top": [
+          {
+            "type": "horizontal-chromosome-labels",
+            "uid": "GzHGPlijS2eASBqslzVcxA",
+            "tilesetUid": "ZpZ8c5JJRUS1J7ZkofcUrg",
+            "server": "https://resgen.io/api/v1",
+            "options": {
+              "showMousePosition": false,
+              "mousePositionColor": "#999999"
+            },
+            "name": "Chromosome Axis",
+            "width": 1027,
+            "height": 30,
+            "position": "top"
+          },
+          {
+            "type": "horizontal-gene-annotations",
+            "uid": "R6ZZ5LnEQ4ODCWZoE38maw",
+            "tilesetUid": "M9A9klpwTci5Vf4bHZ864g",
+            "server": "https://resgen.io/api/v1",
+            "options": {
+              "labelColor": "black",
+              "labelPosition": "hidden",
+              "plusStrandColor": "blue",
+              "minusStrandColor": "red",
+              "trackBorderWidth": 0,
+              "trackBorderColor": "black",
+              "showMousePosition": false,
+              "name": "gene-annotations-hg38_3d2Hebg.db",
+              "mousePositionColor": "#999999"
+            },
+            "name": "Gene Annotations (hg38)",
+            "width": 568,
+            "height": 70,
+            "position": "top"
+          },
+          {
+            "type": "horizontal-bar",
+            "uid": "bmcNxj_MSEar_3nYVMnPnQ",
+            "tilesetUid": "a-iBpdh3Q_uO2FLCWKpOOw",
+            "server": "https://resgen.io/api/v1",
+            "options": {
+              "labelColor": "black",
+              "labelPosition": "topLeft",
+              "axisPositionHorizontal": "right",
+              "barFillColor": "darkgreen",
+              "valueScaling": "linear",
+              "trackBorderWidth": 0,
+              "trackBorderColor": "black",
+              "labelTextOpacity": 0.4,
+              "barOpacity": 1,
+              "name": "conservation (hg38.phastCons100way.bw)"
+            },
+            "width": 568,
+            "height": 42,
+            "position": "top",
+            "name": "conservation (hg38.phastCons100way.bw)"
+          },
+          {
+            "type": "horizontal-stacked-bar",
+            "uid": "dEHMyN28RFSG1f-cPS6V2w",
+            "tilesetUid": "HMSJyvLCSgGmrDJctdIz3w",
+            "server": "https://resgen.io/api/v1",
+            "options": {
+              "labelPosition": "topLeft",
+              "labelColor": "black",
+              "labelTextOpacity": 0.4,
+              "valueScaling": "exponential",
+              "trackBorderWidth": 0,
+              "trackBorderColor": "black",
+              "backgroundColor": "white",
+              "barBorder": false,
+              "scaledHeight": false,
+              "sortLargestOnTop": true,
+              "colorScale": [
+                "#FF0000",
+                "#FF4500",
+                "#32CD32",
+                "#008000",
+                "#006400",
+                "#C2E105",
+                "#FFFF00",
+                "#66CDAA",
+                "#8A91D0",
+                "#CD5C5C",
+                "#E9967A",
+                "#BDB76B",
+                "#808080",
+                "#C0C0C0",
+                "#FFFFFF"
+              ],
+              "name": "all.KL.bed.hg38.multires.mv5"
+            },
+            "width": 568,
+            "height": 63,
+            "position": "top",
+            "name": "all.KL.bed.hg38.multires.mv5"
+          },
+          {
+            "type": "horizontal-multivec",
+            "uid": "YafcbvKDQvWoWRT1WrygPA",
+            "tilesetUid": "UvVPeLHuRDiYA3qwFlm7xQ",
+            "server": "https://resgen.io/api/v1",
+            "options": {
+              "labelPosition": "hidden",
+              "labelColor": "black",
+              "labelTextOpacity": 0.4,
+              "valueScaling": "linear",
+              "trackBorderWidth": 0,
+              "trackBorderColor": "black",
+              "heatmapValueScaling": "log",
+              "name": "my_file_genome_wide.multires.mv5"
+            },
+            "width": 568,
+            "height": 365,
+            "position": "top",
+            "name": "my_file_genome_wide.multires.mv5"
+          }
+        ],
+        "left": [],
+        "center": [],
+        "bottom": [],
+        "right": [],
+        "whole": [],
+        "gallery": []
+      },
+      "layout": {
+        "w": 6,
+        "h": 6,
+        "x": 0,
+        "y": 0,
+        "i": "UiHlCoxRQ-aITBDi5j8b_w",
+        "moved": false,
+        "static": false
+      },
+      "uid": "UiHlCoxRQ-aITBDi5j8b_w",
+      "genomePositionSearchBoxVisible": true,
+      "genomePositionSearchBox": {
+        "autocompleteServer": "https://higlass.io/api/v1",
+        "chromInfoServer": "https://higlass.io/api/v1",
+        "visible": true,
+        "chromInfoId": "hg38",
+        "autocompleteId": "P0PLbQMwTYGy-5uPIQid7A"
+      }
+    },
+    {
+      "initialXDomain": [
+        220662941.81463498,
+        235284309.95877442
+      ],
+      "initialYDomain": [
+        2681767426.0096855,
+        2682314749.95091
+      ],
+      "tracks": {
+        "top": [
+          {
+            "type": "combined",
+            "uid": "Bmf_uxdlStqTWMicqaX3EA",
+            "height": 30,
+            "width": 1027,
+            "contents": [
+              {
+                "type": "horizontal-chromosome-labels",
+                "uid": "GzHGPlijS2eASBqslzVcxA",
+                "tilesetUid": "ZpZ8c5JJRUS1J7ZkofcUrg",
+                "server": "https://resgen.io/api/v1",
+                "options": {
+                  "showMousePosition": false,
+                  "mousePositionColor": "#999999"
+                },
+                "name": "Chromosome Axis",
+                "width": 1027,
+                "height": 30,
+                "position": "top"
+              },
+              {
+                "uid": "fP3Md-_1R32SI0yg5GYG0w",
+                "type": "viewport-projection-horizontal",
+                "fromViewUid": "UiHlCoxRQ-aITBDi5j8b_w",
+                "options": {
+                  "projectionFillColor": "#777",
+                  "projectionStrokeColor": "#777",
+                  "projectionFillOpacity": 0.3,
+                  "projectionStrokeOpacity": 0.7,
+                  "strokeWidth": 1
+                },
+                "name": "Viewport Projection",
+                "position": "top"
+              }
+            ],
+            "position": "top",
+            "options": {}
+          },
+          {
+            "type": "combined",
+            "uid": "E0rIGAdRS5-NqohJ6qnYJg",
+            "height": 70,
+            "width": 568,
+            "contents": [
+              {
+                "type": "horizontal-gene-annotations",
+                "uid": "R6ZZ5LnEQ4ODCWZoE38maw",
+                "tilesetUid": "M9A9klpwTci5Vf4bHZ864g",
+                "server": "https://resgen.io/api/v1",
+                "options": {
+                  "labelColor": "black",
+                  "labelPosition": "hidden",
+                  "plusStrandColor": "blue",
+                  "minusStrandColor": "red",
+                  "trackBorderWidth": 0,
+                  "trackBorderColor": "black",
+                  "showMousePosition": false,
+                  "name": "gene-annotations-hg38_3d2Hebg.db",
+                  "mousePositionColor": "#999999"
+                },
+                "name": "Gene Annotations (hg38)",
+                "width": 1027,
+                "height": 55,
+                "position": "top"
+              },
+              {
+                "uid": "JGlkr6JrQPyAqjkwhEgIYA",
+                "type": "viewport-projection-horizontal",
+                "fromViewUid": "UiHlCoxRQ-aITBDi5j8b_w",
+                "options": {
+                  "projectionFillColor": "#777",
+                  "projectionStrokeColor": "#777",
+                  "projectionFillOpacity": 0.3,
+                  "projectionStrokeOpacity": 0.7,
+                  "strokeWidth": 1
+                },
+                "name": "Viewport Projection",
+                "position": "top"
+              }
+            ],
+            "position": "top",
+            "options": {}
+          },
+          {
+            "type": "combined",
+            "uid": "TkjnRnqtRb-OACWsYVrTyw",
+            "height": 42,
+            "width": 568,
+            "contents": [
+              {
+                "type": "horizontal-bar",
+                "uid": "bmcNxj_MSEar_3nYVMnPnQ",
+                "tilesetUid": "a-iBpdh3Q_uO2FLCWKpOOw",
+                "server": "https://resgen.io/api/v1",
+                "options": {
+                  "labelColor": "black",
+                  "labelPosition": "topLeft",
+                  "axisPositionHorizontal": "right",
+                  "barFillColor": "darkgreen",
+                  "valueScaling": "linear",
+                  "trackBorderWidth": 0,
+                  "trackBorderColor": "black",
+                  "labelTextOpacity": 0.4,
+                  "barOpacity": 1,
+                  "name": "conservation (hg38.phastCons100way.bw)"
+                },
+                "width": 1027,
+                "height": 29,
+                "position": "top",
+                "name": "conservation (hg38.phastCons100way.bw)"
+              },
+              {
+                "uid": "CdWiV9Z8RHCIkm4RFTdGsA",
+                "type": "viewport-projection-horizontal",
+                "fromViewUid": "UiHlCoxRQ-aITBDi5j8b_w",
+                "options": {
+                  "projectionFillColor": "#777",
+                  "projectionStrokeColor": "#777",
+                  "projectionFillOpacity": 0.3,
+                  "projectionStrokeOpacity": 0.7,
+                  "strokeWidth": 1
+                },
+                "name": "Viewport Projection",
+                "position": "top"
+              }
+            ],
+            "position": "top",
+            "options": {}
+          },
+          {
+            "type": "combined",
+            "uid": "JbP68PQISu6a0HqLc3HojA",
+            "height": 62,
+            "width": 568,
+            "contents": [
+              {
+                "type": "horizontal-stacked-bar",
+                "uid": "dEHMyN28RFSG1f-cPS6V2w",
+                "tilesetUid": "HMSJyvLCSgGmrDJctdIz3w",
+                "server": "https://resgen.io/api/v1",
+                "options": {
+                  "labelPosition": "topLeft",
+                  "labelColor": "black",
+                  "labelTextOpacity": 0.4,
+                  "valueScaling": "exponential",
+                  "trackBorderWidth": 0,
+                  "trackBorderColor": "black",
+                  "backgroundColor": "white",
+                  "barBorder": false,
+                  "scaledHeight": false,
+                  "sortLargestOnTop": true,
+                  "colorScale": [
+                    "#FF0000",
+                    "#FF4500",
+                    "#32CD32",
+                    "#008000",
+                    "#006400",
+                    "#C2E105",
+                    "#FFFF00",
+                    "#66CDAA",
+                    "#8A91D0",
+                    "#CD5C5C",
+                    "#E9967A",
+                    "#BDB76B",
+                    "#808080",
+                    "#C0C0C0",
+                    "#FFFFFF"
+                  ],
+                  "name": "all.KL.bed.hg38.multires.mv5"
+                },
+                "width": 1027,
+                "height": 36,
+                "position": "top",
+                "name": "all.KL.bed.hg38.multires.mv5"
+              },
+              {
+                "uid": "fjhNMRyhRI2-1dQ9-OCnng",
+                "type": "viewport-projection-horizontal",
+                "fromViewUid": "UiHlCoxRQ-aITBDi5j8b_w",
+                "options": {
+                  "projectionFillColor": "#777",
+                  "projectionStrokeColor": "#777",
+                  "projectionFillOpacity": 0.3,
+                  "projectionStrokeOpacity": 0.7,
+                  "strokeWidth": 1
+                },
+                "name": "Viewport Projection",
+                "position": "top"
+              }
+            ],
+            "position": "top",
+            "options": {}
+          },
+          {
+            "type": "combined",
+            "uid": "NJQgfT8KQBqLK75HMuCAsA",
+            "height": 366,
+            "width": 568,
+            "contents": [
+              {
+                "type": "horizontal-multivec",
+                "uid": "YafcbvKDQvWoWRT1WrygPA",
+                "tilesetUid": "UvVPeLHuRDiYA3qwFlm7xQ",
+                "server": "https://resgen.io/api/v1",
+                "options": {
+                  "labelPosition": "hidden",
+                  "labelColor": "black",
+                  "labelTextOpacity": 0.4,
+                  "valueScaling": "linear",
+                  "trackBorderWidth": 0,
+                  "trackBorderColor": "black",
+                  "heatmapValueScaling": "log",
+                  "name": "my_file_genome_wide.multires.mv5"
+                },
+                "width": 434,
+                "height": 270,
+                "position": "top",
+                "name": "my_file_genome_wide.multires.mv5"
+              },
+              {
+                "uid": "QnuibWPGQLCjhf8PknJzzQ",
+                "type": "viewport-projection-horizontal",
+                "fromViewUid": "UiHlCoxRQ-aITBDi5j8b_w",
+                "options": {
+                  "projectionFillColor": "#777",
+                  "projectionStrokeColor": "#777",
+                  "projectionFillOpacity": 0.3,
+                  "projectionStrokeOpacity": 0.7,
+                  "strokeWidth": 1
+                },
+                "name": "Viewport Projection",
+                "position": "top"
+              }
+            ],
+            "position": "top",
+            "options": {}
+          }
+        ],
+        "left": [],
+        "center": [],
+        "bottom": [],
+        "right": [],
+        "whole": [],
+        "gallery": []
+      },
+      "layout": {
+        "w": 6,
+        "h": 6,
+        "x": 6,
+        "y": 0,
+        "i": "Lj9s_0A_TJKu8fHtJJBMWg",
+        "moved": false,
+        "static": false
+      },
+      "uid": "Lj9s_0A_TJKu8fHtJJBMWg",
+      "genomePositionSearchBoxVisible": true,
+      "genomePositionSearchBox": {
+        "autocompleteServer": "https://higlass.io/api/v1",
+        "chromInfoServer": "https://higlass.io/api/v1",
+        "visible": true,
+        "chromInfoId": "hg38",
+        "autocompleteId": "P0PLbQMwTYGy-5uPIQid7A"
+      }
+    }
+  ],
+  "zoomLocks": {
+    "locksByViewUid": {},
+    "locksDict": {}
+  },
+  "locationLocks": {
+    "locksByViewUid": {},
+    "locksDict": {}
+  },
+  "valueScaleLocks": {
+    "locksByViewUid": {},
+    "locksDict": {}
+  }
+}
+
   window.hglib.viewer(
     document.getElementById('bigwig'),
-    "https://higlass.io/api/v1/viewconfs/?d=E1a9LFkFRoOJaLp4JKMg7A",
+    viewconf1,
     { bounded: true}
   );
 
   window.hglib.viewer(
     document.getElementById('multivec'),
-    "https://higlass.io/api/v1/viewconfs/?d=Kp6qt1jaQFqTBeIqN4grpg",
+    viewconf2,
     { bounded: true}
   );
 
   window.hglib.viewer(
     document.getElementById('two-views'),
-    "https://higlass.io/api/v1/viewconfs/?d=IYecQvy-ToO9b2t0mkzupw",
+    viewconf3,
     { bounded: true}
   );
 
